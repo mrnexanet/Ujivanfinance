@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rajgarh Loan Hub – Instant Personal Loan</title>
+  <meta name="description" content="Rajgarh Loan Hub offers instant personal, business, home and LAP loan services with quick approval, minimum documents and free consultation in Rajgarh.">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+    header { background: #1a73e8; color: white; padding: 20px; text-align: center; }
+    nav { background: #0f5dc8; padding: 10px; text-align: center; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; cursor: pointer; }
+    .hero { padding: 50px; text-align: center; background: white; }
+    .hero h1 { font-size: 32px; color: #333; margin: 0; }
+    .hero p { font-size: 18px; color: #555; margin: 10px 0 20px; }
+    .btn { background: #1a73e8; color: white; padding: 12px 20px; border-radius: 5px; text-decoration: none; display: inline-block; cursor: pointer; }
+    section { padding: 40px; background: white; margin: 20px; border-radius: 10px; box-sizing: border-box; }
+    h2 { color: #1a73e8; margin-top: 0; }
+    .services ul, .faq ul { list-style: none; padding: 0; margin: 0; }
+    .services li, .faq li { padding: 8px 0; font-size: 18px; }
+    footer { background: #1a73e8; color: white; text-align: center; padding: 15px; margin-top: 20px; }
+    form input, form select, form button { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; }
+    form button { background: #1a73e8; color: white; border: none; font-size: 18px; cursor: pointer; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Rajgarh Loan Hub – Instant Personal Loan</h1>
+  <p>Fast • Trusted • Professional Loan Services in Rajgarh</p>
+</header>
+<nav>
+  <a onclick="scrollToSection('home')">Home</a>
+  <a onclick="scrollToSection('services')">Services</a>
+  <a onclick="scrollToSection('apply')">Apply Now</a>
+  <a onclick="scrollToSection('contact')">Contact</a>
+  <a onclick="scrollToSection('about')">About Us</a>
+  <a onclick="scrollToSection('faq')">FAQ</a>
+  <a onclick="scrollToSection('terms')">Terms</a>
+  <a onclick="scrollToSection('privacy')">Privacy Policy</a>
+  <a onclick="scrollToSection('emi')">EMI Calculator</a>
+  <a onclick="scrollToSection('bank')">Bank Partners</a>
+</nav>
+<section id="home" class="hero">
+  <h1>Get Instant Personal & Business Loans in Rajgarh</h1>
+  <p>Quick approval • Minimum documents • Free consultation</p>
+  <span class="btn" onclick="scrollToSection('apply')">Apply for Loan</span>
+</section>
+<section class="services" id="services">
+  <h2>Our Loan Services</h2>
+  <ul>
+    <li>✓ Personal Loan in Rajgarh</li>
+    <li>✓ Instant Personal Loan</li>
+    <li>✓ Business Loan</li>
+    <li>✓ Home Loan Assistance</li>
+    <li>✓ Loan Against Property (LAP)</li>
+    <li>✓ MSME / Mudra Loan Support</li>
+    <li>✓ Credit Card Assistance</li>
+    <li>✓ CIBIL Score Guidance</li>
+  </ul>
+</section>
+<section id="about">
+  <h2>About Us</h2>
+  <p>Rajgarh Loan Hub is dedicated to providing fast, reliable, and professional loan services to individuals and businesses in Rajgarh. Our mission is to make access to financial assistance simple and transparent. With a network of trusted bank partners, minimal documentation, and a commitment to customer satisfaction, we ensure that every client receives the guidance and support they need to secure the best loan options.</p>
+  <p>We pride ourselves on our expertise, quick processing, and a customer-first approach. Whether it’s a personal loan, business financing, home loan, or loan against property, Rajgarh Loan Hub is your trusted partner for all financial needs in Rajgarh.</p>
+</section>
+<section id="apply">
+  <h2>Apply for Loan</h2>
+  <form onsubmit="return false;">
+    <input type="text" placeholder="Full Name" required />
+    <input type="tel" placeholder="Mobile Number" required />
+    <input type="text" placeholder="City" required />
+    <select>
+      <option>Select Loan Type</option>
+      <option>Personal Loan</option>
+      <option>Business Loan</option>
+      <option>Home Loan</option>
+      <option>Loan Against Property</option>
+      <option>Credit Card</option>
+    </select>
+    <input type="number" placeholder="Loan Amount (₹)" id="loanAmount" />
+    <input type="number" placeholder="Interest Rate (%)" id="interest" />
+    <input type="number" placeholder="Tenure (Months)" id="tenure" />
+    <button type="button" onclick="calculateEMI()">Calculate EMI</button>
+  </form>
+  <p id="emiResult" style="font-weight:bold;"></p>
+</section>
+<section id="emi">
+  <h2>EMI Calculator</h2>
+  <form onsubmit="return false;">
+    <input type="number" placeholder="Loan Amount (₹)" id="emiLoan" />
+    <input type="number" placeholder="Interest Rate (%)" id="emiInterest" />
+    <input type="number" placeholder="Tenure (Months)" id="emiTenure" />
+    <button type="button" onclick="calculateEMISection()">Calculate EMI</button>
+  </form>
+  <p id="emiOutputSection" style="font-weight:bold; margin-top:10px;"></p>
+</section>
+<section id="faq">
+  <h2>Frequently Asked Questions (FAQ)</h2>
+  <div class="faq">
+    <ul>
+      <li><strong>Q1: What types of loans do you offer?</strong><br>We offer Personal Loans, Business Loans, Home Loans, Loan Against Property (LAP), and Credit Card assistance.</li>
+      <li><strong>Q2: How can I apply for a loan?</strong><br>You can apply online through our 'Apply Now' section by filling out the form with your details and loan requirements.</li>
+      <li><strong>Q3: What documents are required?</strong><br>Typically, identity proof, address proof, income proof, and bank statements are required depending on the loan type.</li>
+      <li><strong>Q4: How quickly can I get loan approval?</strong><br>Loan approvals are usually processed within 24-48 hours after submitting all required documents.</li>
+      <li><strong>Q5: Do you check CIBIL score?</strong><br>Yes, we provide CIBIL score guidance, and your credit score may affect loan approval and interest rates.</li>
+      <li><strong>Q6: Are there any hidden charges?</strong><br>No, we maintain transparency. All charges and interest rates are clearly communicated before approval.</li>
+      <li><strong>Q7: Can I calculate EMI before applying?</strong><br>Yes, you can use our EMI Calculator section to estimate your monthly EMI for the desired loan amount, tenure, and interest rate.</li>
+      <li><strong>Q8: Which banks do you partner with?</strong><br>We partner with leading banks like SBI, HDFC, ICICI, PNB, Axis Bank, Bank of Baroda, Kotak Mahindra, and other regional banks for seamless loan processing.</li>
+    </ul>
+  </div>
+</section>
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Phone: +91-8619350873</p>
+  <p>Email: nishantbijarniya877@gmail.com</p>
+  <p>Address: Rajgarh, India</p>
+</section>
+<section id="terms">
+  <h2>Terms & Conditions</h2>
+  <p>Welcome to Rajgarh Loan Hub. By accessing and using our website and services, you agree to comply with the following terms and conditions.</p>
+</section>
+<section id="privacy">
+  <h2>Privacy Policy</h2>
+  <p>Rajgarh Loan Hub is committed to protecting your privacy. We collect and use personal information only to provide and improve our services. We do not share your personal details with any third parties without your consent. By using our services, you agree to our privacy practices.</p>
+</section>
+<section id="bank">
+  <h2>Bank Partners</h2>
+  <p>We are partnered with leading banks to provide seamless loan services:</p>
+  <ul>
+    <li>✓ State Bank of India</li>
+    <li>✓ HDFC Bank</li>
+    <li>✓ ICICI Bank</li>
+    <li>✓ Punjab National Bank</li>
+    <li>✓ Axis Bank</li>
+    <li>✓ Bank of Baroda</li>
+    <li>✓ Kotak Mahindra Bank</li>
+    <li>✓ Other leading national and regional banks</li>
+  </ul>
+</section>
+<footer>
+  <p>© 2025 Rajgarh Loan Hub – All Rights Reserved</p>
+</footer>
+<script>
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    alert('Section "' + sectionId + '" not found.');
+  }
+}
+function calculateEMI() {
+  const principal = parseFloat(document.getElementById('loanAmount').value);
+  const interest = parseFloat(document.getElementById('interest').value);
+  const tenure = parseFloat(document.getElementById('tenure').value);
+  if (isNaN(principal) || isNaN(interest) || isNaN(tenure)) {
+    document.getElementById('emiResult').innerText = 'Please enter all fields correctly.';
+    return;
+  }
+  const monthlyInterest = interest / (12 * 100);
+  const emi = (principal * monthlyInterest * Math.pow(1 + monthlyInterest, tenure)) / (Math.pow(1 + monthlyInterest, tenure) - 1);
+  document.getElementById('emiResult').innerText = 'Your EMI is ₹' + emi.toFixed(2);
+  document.getElementById('emiLoan').value = principal;
+  document.getElementById('emiInterest').value = interest;
+  document.getElementById('emiTenure').value = tenure;
+  scrollToSection('emi');
+}
+function calculateEMISection() {
+  const principal = parseFloat(document.getElementById('emiLoan').value);
+  const interest = parseFloat(document.getElementById('emiInterest').value);
+  const tenure = parseFloat(document.getElementById('emiTenure').value);
+  if (isNaN(principal) || isNaN(interest) || isNaN(tenure)) {
+    document.getElementById('emiOutputSection').innerText = 'Please enter all fields correctly.';
+    return;
+  }
+  const monthlyInterest = interest / (12 * 100);
+  const emi = (principal * monthlyInterest * Math.pow(1 + monthlyInterest, tenure)) / (Math.pow(1 + monthlyInterest, tenure) - 1);
+  document.getElementById('emiOutputSection').innerText = 'Your EMI is ₹' + emi.toFixed(2);
+}
+</script>
+</body>
+</html>
